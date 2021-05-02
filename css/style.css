@@ -1,0 +1,121 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.body {
+    background-image: url('../img/Mountains_stock_UIAA.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nav {
+    background-color: rgba(169, 169, 169, 0.39);
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    border-radius: 20% 0 0 70%;
+    right: -300px;
+    transition: right .8s cubic-bezier(1, 0, 0, 1);
+}
+
+.change {
+    right: 0;
+}
+
+.nav-lines {
+    width: 35px;
+    height: 30px;
+    position: fixed;
+    top: 30px;
+    right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.lines {
+    width: 100%;
+    height: 3px;
+    background-color: #eee;
+    transition: all .8s;
+}
+
+.change .line-1 {
+    transform: rotateZ(-405deg) translate(-8px, 6px);
+}
+
+.change .line-2 {
+    opacity: 0;
+}
+
+.change .line-3 {
+    transform: rotateZ(405deg) translate(-8px, -6px);
+}
+
+.nav-list {
+    text-align: right;
+}
+
+.nav-item {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.nav-link {
+    color: #eee;
+    text-decoration: none;
+    font-size: 22px;
+    position: relative;
+    padding: 4px 0;
+}
+
+.nav-link::before, .nav-link::after {
+    content: "";
+    background-color: #fff;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.nav-link::before {
+    top: 0;
+    transform-origin: left;
+}
+
+.nav-link::after {
+    bottom: 0;
+    transform-origin: right;
+}
+
+.nav-link:hover::before, .nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+.title__block {
+    margin: 450px 0 0 165px;
+    display: inline-block;
+    transition: margin .4s;
+}
+
+.title {
+    font-size: 130px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #fff;
+    filter: blur(12px);
+    transition: filter .7s;
+}
+
+.title:hover {
+    filter: blur(0);
+}
